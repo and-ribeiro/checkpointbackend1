@@ -1,4 +1,4 @@
-package com.digitalhouse.series.config;
+package com.digitalhouse.catalogservice.rabbit.config;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,11 +8,21 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQSenderConfig {
 
+    @Value("${queue.movie.name}")
+    private String movieQueue;
+
     @Value("${queue.series.name}")
     private String serieQueue;
 
     @Bean
-    public Queue queue() {
+    public Queue queueMovie() {
+        return new Queue(this.movieQueue, false);
+    }
+
+    @Bean
+    public Queue queueSerie() {
         return new Queue(this.serieQueue, false);
     }
+
 }
+
