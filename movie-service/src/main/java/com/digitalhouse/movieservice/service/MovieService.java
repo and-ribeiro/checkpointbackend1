@@ -10,4 +10,6 @@ public interface MovieService {
 
     List<Movie> allMoviesByGenre(String genre);
 
+    String getMessage();
+
 }

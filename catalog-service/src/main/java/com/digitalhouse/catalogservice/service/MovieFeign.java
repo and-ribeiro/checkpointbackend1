@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "MOVIE-SERVICE")
+@FeignClient(name = "movie-service")
 public interface MovieFeign {
 
     @GetMapping("/movies/{genre}")
     List<MovieDTO> allMoviesByGenre(@PathVariable String genre);
+
+    @GetMapping("/movies/message")
+    ResponseEntity<String> getMessage();
 }

@@ -7,4 +7,6 @@ import java.util.List;
 public interface CatalogService {
 
     List<MovieDTO> searchByGenre(String genre);
+
+    void callMovieService();
 }

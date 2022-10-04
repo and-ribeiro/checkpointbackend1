@@ -25,4 +25,9 @@ public class MovieController {
         return ResponseEntity.ok(movieService.saveMovie(movie));
     }
 
+    @GetMapping("/message")
+    private ResponseEntity<String> getMessage(){
+        return ResponseEntity.ok(movieService.getMessage());
+    }
+
 }

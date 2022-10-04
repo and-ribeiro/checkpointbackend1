@@ -23,6 +23,11 @@ public class CatalogController {
         return ResponseEntity.ok(catalogService.searchByGenre(genre));
     }
 
+    @GetMapping("/call")
+    public ResponseEntity<?> callingMovieService(){
+        return ResponseEntity.ok("I just tried calling the Movie Service");
+    }
+
 
 
 }
